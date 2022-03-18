@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/main_nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/validateAccountFragment">
+
+    <fragment
+        android:id="@+id/validateAccountFragment"
+        android:name="com.picpay.desafio.android.contact.view.ContactFragment"
+        android:label="fragment_validate_account"
+        tools:layout="@layout/contact_fragment" />
 
 </navigation>
