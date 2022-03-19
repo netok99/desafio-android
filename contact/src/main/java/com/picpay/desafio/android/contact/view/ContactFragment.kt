@@ -16,7 +16,7 @@ class ContactFragment : Fragment() {
 
     private lateinit var binding: ContactFragmentBinding
     private val viewModel: ContactViewModel by viewModel()
-//    private val userListAdapter by lazy { UserListAdapter () }
+    private val userListAdapter by lazy { UserListAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +35,7 @@ class ContactFragment : Fragment() {
     }
 
     private fun initViews() = with(binding) {
-//        recyclerView.adapter = userListAdapter
+        recyclerView.adapter = userListAdapter
         userListProgressBar.visibility = View.VISIBLE
     }
 
@@ -48,7 +48,7 @@ class ContactFragment : Fragment() {
     }
 
     private fun showSuccess(users: List<User>) {
-        val userNew = users
+        userListAdapter.users = users
         binding.userListProgressBar.visibility = View.GONE
     }
 
