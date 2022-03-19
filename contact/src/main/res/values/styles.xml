@@ -1,10 +1,10 @@
 <resources>
     <style name="ScreenTitleTextView" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginStart">24dp</item>
-        <item name="android:layout_marginEnd">24dp</item>
-        <item name="android:layout_marginTop">48dp</item>
+        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/horizontal_margin</item>
+        <item name="android:layout_marginTop">@dimen/title_margin_top</item>
     </style>
 </resources>

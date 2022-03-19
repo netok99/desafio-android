@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
-    android:orientation="vertical">
+    tools:background="@color/colorPrimaryDark">
 
     <ImageView
         android:id="@+id/picture"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="@dimen/picture_size"
+        android:layout_height="@dimen/picture_size"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:layout_marginTop="@dimen/vertical_small_margin"
+        android:layout_marginBottom="@dimen/vertical_small_margin"
+        android:contentDescription="@string/content_description_contact_picture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,20 +24,20 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/horizontal_small_margin"
+        android:layout_marginLeft="@dimen/horizontal_small_margin"
+        android:layout_marginTop="@dimen/vertical_very_small_margin"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintStart_toEndOf="@+id/picture"
         app:layout_constraintTop_toTopOf="@+id/picture"
-        tools:text="\@username" />
+        tools:text="@string/example_contact_username" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/vertical_very_small_margin"
         android:textColor="@color/colorDetail"
         app:layout_constraintBottom_toBottomOf="@+id/picture"
         app:layout_constraintStart_toStartOf="@+id/username"

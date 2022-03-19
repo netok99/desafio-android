@@ -2,4 +2,7 @@
     <string name="app_name">PicPay</string>
     <string name="title">Contatos</string>
     <string name="error">Ocorreu um erro. Tente novamente.</string>
+    <string name="content_description_contact_picture">Foto do contato.</string>
+    <string name="example_contact_username">Username.Picpay</string>
+    <string name="example_contact_name">Name Surname</string>
 </resources>
