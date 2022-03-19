@@ -20,4 +20,5 @@
 /.idea/gradle.xml
 /.idea/dictionaries
 /.idea/codeStyles
-
+.idea/tasks.xml
+.idea/gradle.xml
