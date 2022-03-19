@@ -7,7 +7,7 @@
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/picture"
         android:layout_width="52dp"
         android:layout_height="52dp"
@@ -17,8 +17,7 @@
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_round_account_circle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/username"

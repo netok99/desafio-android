@@ -1,11 +1,9 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.contact.remote
 
-import retrofit2.Call
+import com.picpay.desafio.android.contact.model.User
 import retrofit2.http.GET
 
-
 interface PicPayService {
-
     @GET("users")
-    fun getUsers(): Call<List<User>>
+    suspend fun getUsers(): List<User>
 }
