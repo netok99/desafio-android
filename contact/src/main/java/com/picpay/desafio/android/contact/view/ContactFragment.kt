@@ -41,22 +41,31 @@ class ContactFragment : Fragment() {
 
     private fun setupObservers() = viewModel.action.observe(viewLifecycleOwner) {
         when (it) {
-            is GetUsersLoading -> showLoading()
-            is GetUsersError -> showError()
-            is GetUsersSuccess -> showSuccess(it.users)
+            is GetUsersLoading -> showLoadingState()
+            is GetUsersError -> showErrorState()
+            is GetUsersSuccess -> showSuccessState(it.users)
         }
     }
 
-    private fun showSuccess(users: List<User>) {
+    private fun showSuccessState(users: List<User>) = with(binding) {
         userListAdapter.users = users
-        binding.userListProgressBar.visibility = View.GONE
+        userListProgressBar.visibility = View.GONE
+        errorMessage.visibility = View.GONE
+        retry.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
     }
 
-    private fun showError() {
-        binding.userListProgressBar.visibility = View.GONE
+    private fun showErrorState() = with(binding) {
+        userListProgressBar.visibility = View.GONE
+        recyclerView.visibility = View.GONE
+        errorMessage.visibility = View.VISIBLE
+        retry.visibility = View.VISIBLE
     }
 
-    private fun showLoading() {
-        binding.userListProgressBar.visibility = View.VISIBLE
+    private fun showLoadingState() = with(binding) {
+        recyclerView.visibility = View.GONE
+        errorMessage.visibility = View.GONE
+        retry.visibility = View.GONE
+        userListProgressBar.visibility = View.VISIBLE
     }
 }

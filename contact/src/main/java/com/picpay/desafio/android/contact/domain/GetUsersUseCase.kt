@@ -2,7 +2,6 @@ package com.picpay.desafio.android.contact.domain
 
 import arrow.core.Either
 import com.picpay.desafio.android.contact.model.User
-import com.picpay.desafio.android.contact.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 

@@ -7,9 +7,7 @@ import com.picpay.desafio.android.contact.domain.GetUsersState
 import com.picpay.desafio.android.contact.domain.GetUsersUseCase
 import kotlinx.coroutines.launch
 
-internal class ContactViewModel(
-    private val getUsersUseCase: GetUsersUseCase
-) : ViewModel() {
+class ContactViewModel(private val getUsersUseCase: GetUsersUseCase) : ViewModel() {
 
     internal val action = MutableLiveData<GetUsersState>()
 

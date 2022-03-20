@@ -1,8 +1,8 @@
 package com.picpay.desafio.android.contact.di
 
 import com.picpay.desafio.android.contact.domain.GetUsersUseCase
+import com.picpay.desafio.android.contact.domain.UserRepository
 import com.picpay.desafio.android.contact.remote.PicPayService
-import com.picpay.desafio.android.contact.repository.UserRepository
 import com.picpay.desafio.android.contact.repository.UserRepositoryImpl
 import com.picpay.desafio.android.contact.view.ContactViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel

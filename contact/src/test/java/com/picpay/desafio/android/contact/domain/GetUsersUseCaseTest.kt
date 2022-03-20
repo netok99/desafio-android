@@ -3,7 +3,6 @@ package com.picpay.desafio.android.contact.domain
 import arrow.core.left
 import arrow.core.right
 import com.picpay.desafio.android.contact.model.User
-import com.picpay.desafio.android.contact.repository.UserRepository
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK

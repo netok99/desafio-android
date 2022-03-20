@@ -3,6 +3,7 @@ package com.picpay.desafio.android.contact.repository
 import arrow.core.Either
 import arrow.core.left
 import arrow.core.right
+import com.picpay.desafio.android.contact.domain.UserRepository
 import com.picpay.desafio.android.contact.model.User
 import com.picpay.desafio.android.contact.remote.PicPayService
 
