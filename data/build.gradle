@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-parcelize'
+    id 'kotlin-android'
 }
 
 android {
@@ -15,39 +14,35 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+    buildTypes {
+        debug {}
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
-    viewBinding.enabled = true
-    testOptions.unitTests.returnDefaultValues = true
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.navigation:navigation-compose:$nav_version"
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation "androidx.core:core-ktx:$core_ktx_version"
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "com.google.android.material:material:$material_version"
-    implementation "io.insert-koin:koin-android:$koin_version"
-    implementation "io.insert-koin:koin-android-compat:$koin_version"
-    implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
-    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
+
     implementation "io.arrow-kt:arrow-core:$arrow_core_version"
+
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
-    implementation "io.coil-kt:coil:$coil_version"
+
+    implementation "io.insert-koin:koin-android:$koin_version"
 
     testImplementation "junit:junit:$junit_version"
     testImplementation "io.mockk:mockk:$mockk_version"
-    testImplementation "androidx.arch.core:core-testing:$arch_core_test_version"
     androidTestImplementation "io.insert-koin:koin-test:$koin_version"
     androidTestImplementation "io.insert-koin:koin-test-junit4:$koin_version"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
@@ -55,8 +50,6 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
     androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
-    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines_test_version"
 
     implementation project(':domain')
 }

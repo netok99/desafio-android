@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.picpay.desafio.android.contact.databinding.ContactFragmentBinding
-import com.picpay.desafio.android.contact.domain.GetUsersError
-import com.picpay.desafio.android.contact.domain.GetUsersLoading
-import com.picpay.desafio.android.contact.domain.GetUsersSuccess
-import com.picpay.desafio.android.contact.model.User
+import com.picpay.desafio.android.contact.viewmodel.ContactViewModel
+import com.picpay.desafio.android.domain.entity.UserEntity
+import com.picpay.desafio.android.domain.usecase.GetUsersError
+import com.picpay.desafio.android.domain.usecase.GetUsersLoading
+import com.picpay.desafio.android.domain.usecase.GetUsersSuccess
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ContactFragment : Fragment() {
@@ -31,12 +32,12 @@ class ContactFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         setupObservers()
-        viewModel.fetchUsers()
     }
 
     private fun initViews() = with(binding) {
         recyclerView.adapter = userListAdapter
         userListProgressBar.visibility = View.VISIBLE
+        retry.setOnClickListener { viewModel.fetchUsers() }
     }
 
     private fun setupObservers() = viewModel.action.observe(viewLifecycleOwner) {
@@ -47,7 +48,7 @@ class ContactFragment : Fragment() {
         }
     }
 
-    private fun showSuccessState(users: List<User>) = with(binding) {
+    private fun showSuccessState(users: List<UserEntity>) = with(binding) {
         userListAdapter.users = users
         userListProgressBar.visibility = View.GONE
         errorMessage.visibility = View.GONE

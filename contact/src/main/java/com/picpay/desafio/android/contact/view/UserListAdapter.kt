@@ -8,10 +8,10 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.picpay.desafio.android.contact.R
 import com.picpay.desafio.android.contact.databinding.ListItemUserBinding
-import com.picpay.desafio.android.contact.model.User
+import com.picpay.desafio.android.domain.entity.UserEntity
 
 class UserListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    var users = emptyList<User>()
+    var users = emptyList<UserEntity>()
         set(value) {
             DiffUtil.calculateDiff(UserListDiffCallback(field, value))
                 .dispatchUpdatesTo(this)
@@ -36,14 +36,14 @@ class UserListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     inner class UserListItemViewHolder(private val binding: ListItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(user: User) = with(binding) {
-            picture.load(user.img) {
+        fun bind(user: UserEntity) = with(binding) {
+            picture.load(user.image.value) {
                 crossfade(true)
                 placeholder(R.drawable.ic_round_account_circle)
                 transformations(CircleCropTransformation())
             }
-            username.text = user.username
-            name.text = user.name
+            username.text = user.username.value
+            name.text = user.name.value
         }
     }
 }

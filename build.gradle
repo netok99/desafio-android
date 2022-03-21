@@ -29,6 +29,10 @@ buildscript {
         mockk_version = '1.12.3'
         gson_version = '2.8.6'
         fragment_version = '1.4.1'
+        gson_version = '2.8.6'
+        coil_version = '2.0.0-rc01'
+        arch_core_test_version = '2.1.0'
+        kotlinx_coroutines_test_version = '1.6.0'
     }
 
     repositories {
