@@ -4,7 +4,11 @@ import arrow.core.left
 import arrow.core.right
 import com.picpay.desafio.android.data.model.User
 import com.picpay.desafio.android.data.remote.PicPayService
-import com.picpay.desafio.android.domain.entity.*
+import com.picpay.desafio.android.domain.entity.Id
+import com.picpay.desafio.android.domain.entity.Image
+import com.picpay.desafio.android.domain.entity.Name
+import com.picpay.desafio.android.domain.entity.UserEntity
+import com.picpay.desafio.android.domain.entity.Username
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK

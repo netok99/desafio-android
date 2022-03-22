@@ -2,10 +2,10 @@ package com.picpay.desafio.android.domain
 
 import arrow.core.left
 import arrow.core.right
-import com.picpay.desafio.android.domain.entity.UserEntity
 import com.picpay.desafio.android.domain.entity.Id
-import com.picpay.desafio.android.domain.entity.Name
 import com.picpay.desafio.android.domain.entity.Image
+import com.picpay.desafio.android.domain.entity.Name
+import com.picpay.desafio.android.domain.entity.UserEntity
 import com.picpay.desafio.android.domain.entity.Username
 import com.picpay.desafio.android.domain.repository.UserRepository
 import com.picpay.desafio.android.domain.usecase.GetUsersError
@@ -15,9 +15,9 @@ import com.picpay.desafio.android.domain.usecase.GetUsersUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
-import org.junit.Assert.assertEquals
 import kotlinx.coroutines.flow.collectIndexed
 import kotlinx.coroutines.runBlocking
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import java.io.IOException
