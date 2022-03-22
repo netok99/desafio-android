@@ -31,7 +31,8 @@ class ContactFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
-        setupObservers()
+        setupActionObserver()
+        setupStateObserver()
     }
 
     private fun initViews() = with(binding) {
@@ -40,13 +41,19 @@ class ContactFragment : Fragment() {
         retry.setOnClickListener { viewModel.fetchUsers() }
     }
 
-    private fun setupObservers() = viewModel.action.observe(viewLifecycleOwner) {
+    private fun setupActionObserver() = viewModel.action.observe(viewLifecycleOwner) {
         when (it) {
             is GetUsersLoading -> showLoadingState()
             is GetUsersError -> showErrorState()
             is GetUsersSuccess -> showSuccessState(it.users)
         }
     }
+
+    //region exercise
+    private fun setupStateObserver() = viewModel.getState().observe(viewLifecycleOwner) { users ->
+        if (users.isNullOrEmpty()) showSuccessState(users)
+    }
+    //endregion
 
     private fun showSuccessState(users: List<UserEntity>) = with(binding) {
         userListAdapter.users = users

@@ -5,5 +5,5 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val contactModule = module {
-    viewModel { ContactViewModel(get()) }
+    viewModel { ContactViewModel(get(), get()) }
 }
